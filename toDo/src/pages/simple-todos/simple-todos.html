@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Simple Todos
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page1">
+  <form id="simpleTodos-form1">
+    <ion-item id="simpleTodos-input1">
+      <ion-label></ion-label>
+      <ion-input [(ngModel)]="itemToAdd" name="input" type="text" placeholder="Buy Milk"></ion-input>
+    </ion-item>
+  </form>
+  <button (click)="addToDo()" id="simpleTodos-button1" ion-button color="positive" block>
+    +Add
+  </button>
+
+    <ion-list>
+        <ion-item-sliding *ngFor="let t of toDos">
+            <ion-item>
+                {{t}}
+            </ion-item>
+            <ion-item-options side="right">
+                <button ion-button color="danger" (click)="delete(t)" >
+                    <ion-icon name="trash"></ion-icon> Delete
+                </button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+
+</ion-content>
