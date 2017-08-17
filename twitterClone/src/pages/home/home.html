@@ -1,0 +1,74 @@
+<ion-content>
+  <ion-grid>
+    <ion-row center>
+      <img src="assets/ionic-background.jpg" class="header-img">
+    </ion-row>
+    <ion-row>
+      <ion-col col-3 class="profile-img-col">
+        <div class="profile-frame"><img src="assets/Tesla.jpeg" class="profile-img"></div>
+      </ion-col>
+      <div class="margin-left">
+        <ion-col col-1>
+          <button class="profile-btn" ion-button icon-only clear small>
+        <ion-icon name="settings"></ion-icon>
+      </button>
+        </ion-col>
+        <ion-col offset-1 col-1>
+          <button class="profile-btn" ion-button icon-only outline small>
+        <ion-icon name="contacts"></ion-icon>
+      </button>
+        </ion-col>
+        <ion-col col-2>
+          <button class="profile-btn" ion-button outline small>
+          Edit Profile
+        </button>
+        </ion-col>
+      </div>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h3>Nikola Tesla</h3>
+        <p class="tags">Lover of #mobile apps, bloger, soeaker, develioer and inventer of things, also i have cool car named after me</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6>
+        <span class="number">540 </span><span class="text"> Following</span>
+      </ion-col>
+      <ion-col col-6>
+        <span class="number">1,732 </span><span class="text"> Followers</span>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <div padding>
+          <ion-segment>
+            <ion-segment-button class="selected">
+              Tweets
+            </ion-segment-button>
+            <ion-segment-button>
+              Photos
+            </ion-segment-button>
+            <ion-segment-button>
+              Favorites
+            </ion-segment-button>
+          </ion-segment>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item *ngFor="let tweet of dummyTweets">
+            <ion-avatar item-start>
+              <img [src]=tweet.img>
+            </ion-avatar>
+            <h2>{{ tweet.username }} <span class="twet">{{ tweet.handle }}</span></h2>
+            <p text-wrap>{{ tweet.text }}</p>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

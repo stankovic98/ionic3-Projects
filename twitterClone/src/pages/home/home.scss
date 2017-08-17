@@ -1,0 +1,54 @@
+page-home {
+    .header-img {
+        height: 190px;
+    }
+    .profile-img-col {
+        margin-top: -40px;
+    }
+    .profile-frame {
+        background: #ffffff;
+        padding: 4px;
+        border-radius: 5px;
+    }
+    .profile-img {
+        border-radius: 5px;
+    }
+    .profile-btn {
+        border-radius: 5px;
+    }
+    .name-row {
+        font-size: 1.9rem;
+    }
+    ion-col {
+        margin: 0px;
+        padding: 0;
+    }
+    .margin-left {
+        margin-left: 20px;
+    }
+    .text {
+        color: lightgray;
+        text-transform: uppercase;
+    }
+    .number {
+        font-weight: bold;
+        font-size: 120%;
+    }
+    .twet {
+        color: lightgray;
+        font-size: 70%;
+
+    }
+    ion-segment {
+        border: 1px solid lightblue;
+        border-radius: 5px;
+        background-color: #EEE;
+    }
+    ion-segment-button {
+        border: 1px solid lightblue;
+    }
+    .selected {
+        background-color: lightblue !important;
+    }
+
+}
