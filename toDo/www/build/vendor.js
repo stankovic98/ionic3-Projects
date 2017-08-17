@@ -74190,7 +74190,7 @@ function IonicGestureConfig_tsickle_Closure_declarations() {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SplashScreen; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StatusBar; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_core__ = __webpack_require__(188);
 var __extends = (this && this.__extends) || (function () {
@@ -74215,41 +74215,105 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * @name Splash Screen
- * @description This plugin displays and hides a splash screen during application launch. The methods below allows showing and hiding the splashscreen after the app has loaded.
+ * @name Status Bar
+ * @description
+ * Manage the appearance of the native status bar.
+ *
+ * Requires Cordova plugin: `cordova-plugin-statusbar`. For more info, please see the [StatusBar plugin docs](https://github.com/apache/cordova-plugin-statusbar).
+ *
  * @usage
  * ```typescript
- * import { SplashScreen } from '@ionic-native/splash-screen';
+ * import { StatusBar } from '@ionic-native/status-bar';
  *
- * constructor(private splashScreen: SplashScreen) { }
+ * constructor(private statusBar: StatusBar) { }
  *
  * ...
  *
- * this.splashScreen.show();
+ * // let status bar overlay webview
+ * this.statusBar.overlaysWebView(true);
  *
- * this.splashScreen.hide();
+ * // set status bar to white
+ * this.statusBar.backgroundColorByHexString('#ffffff');
  * ```
+ *
  */
-var SplashScreen = (function (_super) {
-    __extends(SplashScreen, _super);
-    function SplashScreen() {
+var StatusBar = (function (_super) {
+    __extends(StatusBar, _super);
+    function StatusBar() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
-     * Shows the splashscreen
+     * Set whether the status bar overlays the main app view. The default
+     * is true.
+     *
+     * @param {boolean} doesOverlay  Whether the status bar overlays the main app view.
      */
-    SplashScreen.prototype.show = function () { };
+    StatusBar.prototype.overlaysWebView = function (doesOverlay) { };
+    ;
     /**
-     * Hides the splashscreen
+     * Use the default statusbar (dark text, for light backgrounds).
      */
-    SplashScreen.prototype.hide = function () { };
-    return SplashScreen;
+    StatusBar.prototype.styleDefault = function () { };
+    ;
+    /**
+     * Use the lightContent statusbar (light text, for dark backgrounds).
+     */
+    StatusBar.prototype.styleLightContent = function () { };
+    ;
+    /**
+     * Use the blackTranslucent statusbar (light text, for dark backgrounds).
+     */
+    StatusBar.prototype.styleBlackTranslucent = function () { };
+    ;
+    /**
+     * Use the blackOpaque statusbar (light text, for dark backgrounds).
+     */
+    StatusBar.prototype.styleBlackOpaque = function () { };
+    ;
+    /**
+     * Set the status bar to a specific named color. Valid options:
+     * black, darkGray, lightGray, white, gray, red, green, blue, cyan, yellow, magenta, orange, purple, brown.
+     *
+     * iOS note: you must call StatusBar.overlaysWebView(false) to enable color changing.
+     *
+     * @param {string} colorName  The name of the color (from above)
+     */
+    StatusBar.prototype.backgroundColorByName = function (colorName) { };
+    ;
+    /**
+     * Set the status bar to a specific hex color (CSS shorthand supported!).
+     *
+     * iOS note: you must call StatusBar.overlaysWebView(false) to enable color changing.
+     *
+     * @param {string} hexString  The hex value of the color.
+     */
+    StatusBar.prototype.backgroundColorByHexString = function (hexString) { };
+    ;
+    /**
+     * Hide the StatusBar
+     */
+    StatusBar.prototype.hide = function () { };
+    ;
+    /**
+    * Show the StatusBar
+    */
+    StatusBar.prototype.show = function () { };
+    ;
+    return StatusBar;
 }(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* IonicNativePlugin */]));
-SplashScreen.decorators = [
+StatusBar.decorators = [
     { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */] },
 ];
 /** @nocollapse */
-SplashScreen.ctorParameters = function () { return []; };
+StatusBar.ctorParameters = function () { return []; };
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["a" /* Cordova */])({
+        sync: true
+    }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Boolean]),
+    __metadata("design:returntype", void 0)
+], StatusBar.prototype, "overlaysWebView", null);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["a" /* Cordova */])({
         sync: true
@@ -74257,7 +74321,7 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
-], SplashScreen.prototype, "show", null);
+], StatusBar.prototype, "styleDefault", null);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["a" /* Cordova */])({
         sync: true
@@ -74265,16 +74329,68 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
-], SplashScreen.prototype, "hide", null);
-SplashScreen = __decorate([
+], StatusBar.prototype, "styleLightContent", null);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["a" /* Cordova */])({
+        sync: true
+    }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], StatusBar.prototype, "styleBlackTranslucent", null);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["a" /* Cordova */])({
+        sync: true
+    }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], StatusBar.prototype, "styleBlackOpaque", null);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["a" /* Cordova */])({
+        sync: true
+    }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], StatusBar.prototype, "backgroundColorByName", null);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["a" /* Cordova */])({
+        sync: true
+    }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], StatusBar.prototype, "backgroundColorByHexString", null);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["a" /* Cordova */])({
+        sync: true
+    }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], StatusBar.prototype, "hide", null);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["a" /* Cordova */])({
+        sync: true
+    }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], StatusBar.prototype, "show", null);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["b" /* CordovaProperty */],
+    __metadata("design:type", Boolean)
+], StatusBar.prototype, "isVisible", void 0);
+StatusBar = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["d" /* Plugin */])({
-        pluginName: 'SplashScreen',
-        plugin: 'cordova-plugin-splashscreen',
-        pluginRef: 'navigator.splashscreen',
-        repo: 'https://github.com/apache/cordova-plugin-splashscreen',
-        platforms: ['Amazon Fire OS', 'Android', 'BlackBerry 10', 'iOS', 'Tizen', 'Ubuntu', 'Windows', 'Windows Phone']
+        pluginName: 'StatusBar',
+        plugin: 'cordova-plugin-statusbar',
+        pluginRef: 'StatusBar',
+        repo: 'https://github.com/apache/cordova-plugin-statusbar',
+        platforms: ['Android', 'iOS', 'Windows', 'Windows Phone']
     })
-], SplashScreen);
+], StatusBar);
 
 //# sourceMappingURL=index.js.map
 
@@ -74285,13 +74401,13 @@ SplashScreen = __decorate([
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__plugin__ = __webpack_require__(189);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__decorators__ = __webpack_require__(256);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__decorators__ = __webpack_require__(257);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__decorators__["a"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__decorators__["b"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_1__decorators__["c"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util__ = __webpack_require__(97);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_plugin__ = __webpack_require__(259);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_plugin__ = __webpack_require__(260);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_3__ionic_native_plugin__["a"]; });
 
 
@@ -74313,10 +74429,10 @@ SplashScreen = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return wrap; });
 /* harmony export (immutable) */ __webpack_exports__["e"] = wrapInstance;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util__ = __webpack_require__(97);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__bootstrap__ = __webpack_require__(252);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__bootstrap__ = __webpack_require__(253);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_fromEvent__ = __webpack_require__(253);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_fromEvent__ = __webpack_require__(254);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_fromEvent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_fromEvent__);
 
 
@@ -74616,7 +74732,7 @@ function wrapInstance(pluginObj, methodName, opts) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StatusBar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SplashScreen; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_core__ = __webpack_require__(188);
 var __extends = (this && this.__extends) || (function () {
@@ -74641,105 +74757,41 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * @name Status Bar
- * @description
- * Manage the appearance of the native status bar.
- *
- * Requires Cordova plugin: `cordova-plugin-statusbar`. For more info, please see the [StatusBar plugin docs](https://github.com/apache/cordova-plugin-statusbar).
- *
+ * @name Splash Screen
+ * @description This plugin displays and hides a splash screen during application launch. The methods below allows showing and hiding the splashscreen after the app has loaded.
  * @usage
  * ```typescript
- * import { StatusBar } from '@ionic-native/status-bar';
+ * import { SplashScreen } from '@ionic-native/splash-screen';
  *
- * constructor(private statusBar: StatusBar) { }
+ * constructor(private splashScreen: SplashScreen) { }
  *
  * ...
  *
- * // let status bar overlay webview
- * this.statusBar.overlaysWebView(true);
+ * this.splashScreen.show();
  *
- * // set status bar to white
- * this.statusBar.backgroundColorByHexString('#ffffff');
+ * this.splashScreen.hide();
  * ```
- *
  */
-var StatusBar = (function (_super) {
-    __extends(StatusBar, _super);
-    function StatusBar() {
+var SplashScreen = (function (_super) {
+    __extends(SplashScreen, _super);
+    function SplashScreen() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     /**
-     * Set whether the status bar overlays the main app view. The default
-     * is true.
-     *
-     * @param {boolean} doesOverlay  Whether the status bar overlays the main app view.
+     * Shows the splashscreen
      */
-    StatusBar.prototype.overlaysWebView = function (doesOverlay) { };
-    ;
+    SplashScreen.prototype.show = function () { };
     /**
-     * Use the default statusbar (dark text, for light backgrounds).
+     * Hides the splashscreen
      */
-    StatusBar.prototype.styleDefault = function () { };
-    ;
-    /**
-     * Use the lightContent statusbar (light text, for dark backgrounds).
-     */
-    StatusBar.prototype.styleLightContent = function () { };
-    ;
-    /**
-     * Use the blackTranslucent statusbar (light text, for dark backgrounds).
-     */
-    StatusBar.prototype.styleBlackTranslucent = function () { };
-    ;
-    /**
-     * Use the blackOpaque statusbar (light text, for dark backgrounds).
-     */
-    StatusBar.prototype.styleBlackOpaque = function () { };
-    ;
-    /**
-     * Set the status bar to a specific named color. Valid options:
-     * black, darkGray, lightGray, white, gray, red, green, blue, cyan, yellow, magenta, orange, purple, brown.
-     *
-     * iOS note: you must call StatusBar.overlaysWebView(false) to enable color changing.
-     *
-     * @param {string} colorName  The name of the color (from above)
-     */
-    StatusBar.prototype.backgroundColorByName = function (colorName) { };
-    ;
-    /**
-     * Set the status bar to a specific hex color (CSS shorthand supported!).
-     *
-     * iOS note: you must call StatusBar.overlaysWebView(false) to enable color changing.
-     *
-     * @param {string} hexString  The hex value of the color.
-     */
-    StatusBar.prototype.backgroundColorByHexString = function (hexString) { };
-    ;
-    /**
-     * Hide the StatusBar
-     */
-    StatusBar.prototype.hide = function () { };
-    ;
-    /**
-    * Show the StatusBar
-    */
-    StatusBar.prototype.show = function () { };
-    ;
-    return StatusBar;
+    SplashScreen.prototype.hide = function () { };
+    return SplashScreen;
 }(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* IonicNativePlugin */]));
-StatusBar.decorators = [
+SplashScreen.decorators = [
     { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */] },
 ];
 /** @nocollapse */
-StatusBar.ctorParameters = function () { return []; };
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["a" /* Cordova */])({
-        sync: true
-    }),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Boolean]),
-    __metadata("design:returntype", void 0)
-], StatusBar.prototype, "overlaysWebView", null);
+SplashScreen.ctorParameters = function () { return []; };
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["a" /* Cordova */])({
         sync: true
@@ -74747,7 +74799,7 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
-], StatusBar.prototype, "styleDefault", null);
+], SplashScreen.prototype, "show", null);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["a" /* Cordova */])({
         sync: true
@@ -74755,68 +74807,16 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
-], StatusBar.prototype, "styleLightContent", null);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["a" /* Cordova */])({
-        sync: true
-    }),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", void 0)
-], StatusBar.prototype, "styleBlackTranslucent", null);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["a" /* Cordova */])({
-        sync: true
-    }),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", void 0)
-], StatusBar.prototype, "styleBlackOpaque", null);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["a" /* Cordova */])({
-        sync: true
-    }),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
-    __metadata("design:returntype", void 0)
-], StatusBar.prototype, "backgroundColorByName", null);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["a" /* Cordova */])({
-        sync: true
-    }),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
-    __metadata("design:returntype", void 0)
-], StatusBar.prototype, "backgroundColorByHexString", null);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["a" /* Cordova */])({
-        sync: true
-    }),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", void 0)
-], StatusBar.prototype, "hide", null);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["a" /* Cordova */])({
-        sync: true
-    }),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", void 0)
-], StatusBar.prototype, "show", null);
-__decorate([
-    __WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["b" /* CordovaProperty */],
-    __metadata("design:type", Boolean)
-], StatusBar.prototype, "isVisible", void 0);
-StatusBar = __decorate([
+], SplashScreen.prototype, "hide", null);
+SplashScreen = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["d" /* Plugin */])({
-        pluginName: 'StatusBar',
-        plugin: 'cordova-plugin-statusbar',
-        pluginRef: 'StatusBar',
-        repo: 'https://github.com/apache/cordova-plugin-statusbar',
-        platforms: ['Android', 'iOS', 'Windows', 'Windows Phone']
+        pluginName: 'SplashScreen',
+        plugin: 'cordova-plugin-splashscreen',
+        pluginRef: 'navigator.splashscreen',
+        repo: 'https://github.com/apache/cordova-plugin-splashscreen',
+        platforms: ['Amazon Fire OS', 'Android', 'BlackBerry 10', 'iOS', 'Tizen', 'Ubuntu', 'Windows', 'Windows Phone']
     })
-], StatusBar);
+], SplashScreen);
 
 //# sourceMappingURL=index.js.map
 
@@ -111836,7 +111836,8 @@ function ClickBlock_tsickle_Closure_declarations() {
 //# sourceMappingURL=click-block.js.map
 
 /***/ }),
-/* 252 */
+/* 252 */,
+/* 253 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -111862,28 +111863,28 @@ function checkReady() {
 //# sourceMappingURL=bootstrap.js.map
 
 /***/ }),
-/* 253 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var Observable_1 = __webpack_require__(9);
-var fromEvent_1 = __webpack_require__(254);
-Observable_1.Observable.fromEvent = fromEvent_1.fromEvent;
-//# sourceMappingURL=fromEvent.js.map
-
-/***/ }),
 /* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var FromEventObservable_1 = __webpack_require__(255);
-exports.fromEvent = FromEventObservable_1.FromEventObservable.create;
+var Observable_1 = __webpack_require__(9);
+var fromEvent_1 = __webpack_require__(255);
+Observable_1.Observable.fromEvent = fromEvent_1.fromEvent;
 //# sourceMappingURL=fromEvent.js.map
 
 /***/ }),
 /* 255 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var FromEventObservable_1 = __webpack_require__(256);
+exports.fromEvent = FromEventObservable_1.FromEventObservable.create;
+//# sourceMappingURL=fromEvent.js.map
+
+/***/ }),
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -112029,7 +112030,7 @@ exports.FromEventObservable = FromEventObservable;
 //# sourceMappingURL=FromEventObservable.js.map
 
 /***/ }),
-/* 256 */
+/* 257 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -112046,7 +112047,7 @@ exports.FromEventObservable = FromEventObservable;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(97);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_observable_throw__ = __webpack_require__(257);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_observable_throw__ = __webpack_require__(258);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_observable_throw___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_observable_throw__);
 
 
@@ -112310,17 +112311,17 @@ function CordovaFiniteObservable(opts) {
 //# sourceMappingURL=decorators.js.map
 
 /***/ }),
-/* 257 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var ErrorObservable_1 = __webpack_require__(258);
+var ErrorObservable_1 = __webpack_require__(259);
 exports._throw = ErrorObservable_1.ErrorObservable.create;
 //# sourceMappingURL=throw.js.map
 
 /***/ }),
-/* 258 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -112408,7 +112409,7 @@ exports.ErrorObservable = ErrorObservable;
 //# sourceMappingURL=ErrorObservable.js.map
 
 /***/ }),
-/* 259 */
+/* 260 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
